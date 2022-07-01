@@ -1,0 +1,136 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Disable the aws module, hiding it from the prompt completely
+[aws]
+format = "(on [$symbol$profile]($style)) "
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+# "bold yellow" style when capacity is between 20% and 35%
+[[battery.display]]
+threshold = 40
+style = "bold yellow"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[cmd_duration]
+show_notifications = false
+
+[conda]
+disabled = true
+
+[crystal]
+disabled = true
+
+[directory]
+truncation_length = 16
+read_only = " ro"
+
+[docker_context]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[env_var]
+disabled = true
+
+[erlang]
+disabled = true
+
+[git_branch]
+symbol = ""
+disabled = false
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+[golang]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[line_break]
+disabled = false
+
+[memory_usage]
+disabled = true
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[package]
+disabled = true
+
+[php]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[singularity]
+disabled = true
+
+[terraform]
+disabled = true
+
+[time]
+disabled = false
+
+[username]
+show_always = false
+
+[zig]
+disabled = true
+
+[custom]
+disabled = true
+
+[purescript]
+disabled = true
+
+[vagrant]
+disabled = true
