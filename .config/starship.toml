@@ -1,10 +1,9 @@
-# Don't print a new line at the start of the prompt
-add_newline = false
+# ==============================================
+# Specify enabled modules and their configs here
+# ==============================================
 
-# Disable the aws module, hiding it from the prompt completely
-[aws]
-format = "(on [$symbol$profile]($style)) "
-disabled = true
+# Don't print a blank line between shell prompts
+add_newline = false
 
 [battery]
 full_symbol = "🔋"
@@ -28,15 +27,80 @@ vicmd_symbol = "[<](bold green)"
 [cmd_duration]
 show_notifications = false
 
+[directory]
+truncation_length = 16
+read_only = " ro"
+
+[git_branch]
+symbol = ""
+disabled = false
+
+[git_status]
+disabled = false
+
+[kubernetes]
+disabled = false
+
+[line_break]
+disabled = false
+
+[python]
+disabled = false
+
+[shlvl]
+disabled = false
+threshold = 1
+
+[sudo]
+disabled = false
+
+[time]
+disabled = false
+
+[username]
+show_always = false
+
+
+# =============================
+# Specify disabled modules here
+# =============================
+
+[aws]
+format = "(on [$symbol$profile]($style)) "
+disabled = true
+
+[azure]
+disabled = true
+
+[buf]
+disabled = true
+
+[c]
+disabled = true
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
 [conda]
+disabled = true
+
+[container]
 disabled = true
 
 [crystal]
 disabled = true
 
-[directory]
-truncation_length = 16
-read_only = " ro"
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
 
 [docker_context]
 disabled = true
@@ -56,30 +120,53 @@ disabled = true
 [erlang]
 disabled = true
 
-[git_branch]
-symbol = ""
-disabled = false
+[fill]
+disabled = true
+
+[gcloud]
+disabled = true
 
 [git_commit]
+disabled = true
+
+[git_metrics]
 disabled = true
 
 [git_state]
 disabled = true
 
-[git_status]
+[golang]
 disabled = true
 
-[golang]
+[haskell]
+disabled = true
+
+[helm]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[hostname]
 disabled = true
 
 [java]
 disabled = true
 
+[jobs]
+disabled = true
+
 [julia]
 disabled = true
 
-[line_break]
-disabled = false
+[kotlin]
+disabled = true
+
+[localip]
+disabled = true
+
+[lua]
+disabled = true
 
 [memory_usage]
 disabled = true
@@ -96,13 +183,31 @@ disabled = true
 [ocaml]
 disabled = true
 
+[openstack]
+disabled = true
+
 [package]
+disabled = true
+
+[perl]
 disabled = true
 
 [php]
 disabled = true
 
-[python]
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[rlang]
 disabled = true
 
 [ruby]
@@ -111,26 +216,35 @@ disabled = true
 [rust]
 disabled = true
 
+[scala]
+disabled = true
+
+[shell]
+disabled = true
+
 [singularity]
+disabled = true
+
+[spack]
+disabled = true
+
+[status]
+disabled = true
+
+[swift]
 disabled = true
 
 [terraform]
 disabled = true
 
-[time]
-disabled = false
+[vagrant]
+disabled = true
 
-[username]
-show_always = false
+[vcsh]
+disabled = true
+
+[vlang]
+disabled = true
 
 [zig]
-disabled = true
-
-[custom]
-disabled = true
-
-[purescript]
-disabled = true
-
-[vagrant]
 disabled = true
