@@ -93,3 +93,8 @@ set showcmd
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " Shell for syntax highlighting purposes.
 let g:is_posix = 1
+
+" Insert 4 spaces when tab key is pressed
+set tabstop=4
+set shiftwidth=4
+set expandtab
