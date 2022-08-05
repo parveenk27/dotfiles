@@ -88,9 +88,9 @@ source <(kubectl completion bash)
 
 #shellcheck disable=SC1090
 if [[ -f ~/.bash_completion.d/complete_alias ]]; then
-    source ~/.bash_completion.d/complete_alias
-    complete -F _complete_alias d d-bash d-sh
-    complete -F __start_kubectl k
+  source ~/.bash_completion.d/complete_alias
+  complete -F _complete_alias d d-bash d-sh
+  complete -F __start_kubectl k
 fi
 
 ## FZF settings
