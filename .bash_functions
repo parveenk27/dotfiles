@@ -14,6 +14,23 @@ function passgen () {
   tr -cd 0-9A-Za-z_ < /dev/urandom | fold -w"${len}" | head -n5
 }
 
+function clear() {
+  # This function restore the old behaviour of clear command, to keep the
+  # scrollback intact, and put the cursor on the top of terminal
+
+  local rows
+
+  rows="$(tput lines)"
+
+  # Add empty rows and columns to scrollback for clear command to erase
+  for (( i=1; i<"${rows}"; i++ )); do
+    printf '\n'
+  done
+
+  # Run the clear command
+  command clear -x
+}
+
 function vagrant() {
   # Run vagrant and vagrant-libvirt (plugin) in docker.
   # The idea is to isolate vagrant-libvirt (plugin) and
