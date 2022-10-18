@@ -80,7 +80,12 @@ alias d-sh="docker run -it --rm --log-driver none --entrypoint=/bin/sh"
 alias d="docker"
 alias h="helm"
 alias k="kubectl"
-
+alias kd="kubectl describe"
+alias ke="kubectl exec -it"
+alias kg="kubectl get"
+alias kl="kubectl logs"
+alias kgw='kubectl get --watch --output-watch-events'
+alias krun='kubectl run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t'
 
 ## Bash completion
 ## ===============
