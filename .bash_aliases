@@ -74,10 +74,11 @@ alias cp='cp -iv'
 alias ln='ln -iv'
 alias mkdir='mkdir -v'
 
-# Docker and Kubernetes
+# Docker, Kubernetes, Helm
 alias d-bash="docker run -it --rm --log-driver none --entrypoint=/bin/bash"
 alias d-sh="docker run -it --rm --log-driver none --entrypoint=/bin/sh"
 alias d="docker"
+alias h="helm"
 alias k="kubectl"
 
 
@@ -86,12 +87,14 @@ alias k="kubectl"
 
 #shellcheck disable=SC1090
 source <(kubectl completion bash)
+source <(helm completion bash)
 
 #shellcheck disable=SC1090
 if [[ -f ~/.bash_completion.d/complete_alias ]]; then
   source ~/.bash_completion.d/complete_alias
   complete -F _complete_alias d d-bash d-sh
   complete -F __start_kubectl k
+  complete -F __start_helm h
 fi
 
 ## FZF settings
