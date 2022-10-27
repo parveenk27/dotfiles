@@ -91,8 +91,10 @@ alias krun='kubectl run --rm --restart=Never --image-pull-policy=IfNotPresent -i
 ## ===============
 
 #shellcheck disable=SC1090
-source <(kubectl completion bash)
-source <(helm completion bash)
+[[ -n "$(type -P kubectl)" ]] && source <(kubectl completion bash)
+
+#shellcheck disable=SC1090
+[[ -n "$(type -P helm)" ]] && source <(helm completion bash)
 
 #shellcheck disable=SC1090
 if [[ -f ~/.bash_completion.d/complete_alias ]]; then
