@@ -44,12 +44,12 @@ alias tmp="cd /tmp"
 [[ -d ~/Documents/vms ]] && alias vms="cd ~/Documents/vms"
 
 # Others
-[[ -z "$(which pbcopy)" ]] && alias pbcopy="xclip -selection clipboard"
+[[ -z "$(type -P pbcopy)" ]] && alias pbcopy="xclip -selection clipboard"
 
 # Overrides
-[[ -n "$(which bat)" ]] && alias cat='bat -pp --theme="Monokai Extended Bright"'
-[[ -n "$(which bat)" ]] && alias less='bat -pp --paging=always'
-[[ -n "$(which delta)" ]] && alias diff='delta'
+[[ -n "$(type -P bat)" ]] && alias cat='bat -pp --theme="Monokai Extended Bright"'
+[[ -n "$(type -P bat)" ]] && alias less='bat -pp --paging=always'
+[[ -n "$(type -P delta)" ]] && alias diff='delta'
 
 # Parenting perms on /
 if [[ "$(uname -s)" == "Linux" ]]; then
