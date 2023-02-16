@@ -77,6 +77,7 @@ alias mkdir='mkdir -v'
 # Docker, Kubernetes, Helm
 alias d-bash="docker run -it --rm --log-driver none --entrypoint=/bin/bash"
 alias d-sh="docker run -it --rm --log-driver none --entrypoint=/bin/sh"
+alias d-run="docker run -it --rm --log-driver none --workdir /workdir"
 alias d="docker"
 alias h="helm"
 alias k="kubectl"
@@ -87,21 +88,24 @@ alias kl="kubectl logs"
 alias kgw='kubectl get --watch --output-watch-events'
 alias krun='kubectl run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t'
 
+# Make
+alias m='make'
+
 ## Bash completion
 ## ===============
 
 #shellcheck disable=SC1090
 [[ -n "$(type -P kubectl)" ]] && source <(kubectl completion bash)
+[[ "$(type -t __start_kubectl)" == "function" ]] && complete -F __start_kubectl k
 
 #shellcheck disable=SC1090
 [[ -n "$(type -P helm)" ]] && source <(helm completion bash)
+[[ "$(type -t __start_helm)" == "function" ]] && complete -F __start_helm h
 
 #shellcheck disable=SC1090
 if [[ -f ~/.bash_completion.d/complete_alias ]]; then
   source ~/.bash_completion.d/complete_alias
   complete -F _complete_alias d d-bash d-sh d-run
-  complete -F __start_kubectl k
-  complete -F __start_helm h
 fi
 
 ## FZF settings
