@@ -99,7 +99,7 @@ alias krun='kubectl run --rm --restart=Never --image-pull-policy=IfNotPresent -i
 #shellcheck disable=SC1090
 if [[ -f ~/.bash_completion.d/complete_alias ]]; then
   source ~/.bash_completion.d/complete_alias
-  complete -F _complete_alias d d-bash d-sh
+  complete -F _complete_alias d d-bash d-sh d-run
   complete -F __start_kubectl k
   complete -F __start_helm h
 fi
