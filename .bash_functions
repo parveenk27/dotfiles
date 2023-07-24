@@ -37,7 +37,7 @@ function vagrant() {
   # Ruby (runtime dependency) from the system
 
   # Specify docker image tag
-  declare -r docker_image_tag="0.11-slim"
+  declare -r docker_image_tag="0.12-slim"
 
   # Follow symlink and find out the full absolute path
   declare -r pwd_real_path="$(realpath "${PWD}")"
