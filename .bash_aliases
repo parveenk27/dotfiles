@@ -33,6 +33,7 @@ alias lsa='lss -A'
 
 # Vim
 alias vimdiff='vim -d' # Start in diff-mode
+alias v='vim'
 
 # Easy navigation
 alias desktop="cd ~/Desktop"
@@ -50,6 +51,7 @@ alias tmp="cd /tmp"
 [[ -n "$(type -P bat)" ]] && alias cat='bat -pp --theme="Monokai Extended Bright"'
 [[ -n "$(type -P bat)" ]] && alias less='bat -pp --paging=always'
 [[ -n "$(type -P delta)" ]] && alias diff='delta'
+[[ -n "$(type -P rg)" ]] && alias grep='rg --color always --hidden'
 
 # Parenting perms on /
 if [[ "$(uname -s)" == "Linux" ]]; then
