@@ -1,0 +1,83 @@
+[alias]
+  # friendly git aliases
+  # thanks to https://github.com/GitAlias/gitalias
+  a = add
+  b = branch
+  c = commit
+  d = diff
+  f = fetch
+  g = grep
+  l = log
+  m = merge
+  p = pull
+  w = whatchanged
+
+  st = status
+
+  co = checkout
+  cob = checkout -b
+
+  ds = diff --staged
+
+  lg = log --graph
+  lo = log --oneline
+
+  rrp = remote prune
+
+  unstage = reset HEAD --
+
+  # show-branch - print a list of branches and their commits.
+  sb = show-branch
+
+  # last tag in the current branch
+  last-tag = describe --tags --abbrev=0
+
+  # show log with the recent hour, day, week, month, year
+  log-1-hour  = log --since=1-hour-ago
+  log-1-day   = log --since=1-day-ago
+  log-1-week  = log --since=1-week-ago
+  log-1-month = log --since=1-month-ago
+  log-1-year = log --since=1-year-ago
+
+  # show log with my own recent hour, day, week, month, year
+  log-my-hour  = "!git log --author \"$(git config user.email)\" --since=1-hour-ago"
+  log-my-day   = "!git log --author \"$(git config user.email)\" --since=1-day-ago"
+  log-my-week  = "!git log --author \"$(git config user.email)\" --since=1-week-ago"
+  log-my-month = "!git log --author \"$(git config user.email)\" --since=1-month-ago"
+  log-my-year = "!git log --author \"$(git config user.email)\" --since=1-year-ago"
+
+  # show log for my own commits by my own user email
+  log-my = "!git log --author \"$(git config user.email)\""
+
+  # show the last log
+  last = log -1 HEAD
+
+  # show log list with our preferred information, a.k.a. `ll`
+  #
+  #   * Short date format using YYYY-MM-DD (no time, no zone)
+  #   * Short hash commit format using abbreviated hexadecimal (not full hexadecimal)
+  #   * Short author field using name (no email address) and signature mark
+  #   * Short layout without columns
+  #
+  log-list = log --graph --topo-order --date=short --abbrev-commit --decorate --all --boundary --pretty=format:'%Cblue%ad %C(auto)%h%Creset -%C(auto)%d%Creset %s %Cblue[%aN]%Creset %Cblue%G?%Creset'
+
+  # show log as a graph
+  log-graph = log --graph --all --oneline --decorate
+
+  # show incoming changes with upstream.
+  incoming = !git remote update --prune; git log ..@{upstream}
+
+  # show outgoing changes with upstream.
+  outgoing = log @{upstream}..
+
+  # thanks to http://gggritso.com/human-git-aliases
+  branches = branch -a
+  tags = tag -n1 --list
+  stashes = stash list
+
+  # Show the default branch name
+  default-branch = config init.defaultBranch
+
+[user]
+  name =
+  email =
