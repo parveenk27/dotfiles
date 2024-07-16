@@ -24,6 +24,7 @@ alias gco='git checkout'
 alias gcm='gco master'
 
 # ls
+alias ls='ls --color'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
@@ -105,9 +106,13 @@ alias m='make'
 [[ "$(type -t __start_helm)" == "function" ]] && complete -F __start_helm h
 
 #shellcheck disable=SC1090
-if [[ -f ~/.bash_completion.d/complete_alias ]]; then
-  source ~/.bash_completion.d/complete_alias
-  complete -F _complete_alias d d-bash d-sh d-run
+[[ "$(type -t _docker)" == "function" ]] && complete -F _docker d
+
+# Use complete-alias from https://github.com/cykerway/complete-alias.git
+if [[ -f "${HOME}/.bash_completion.d/complete-alias/complete_alias" ]]; then
+  #shellcheck disable=SC1091
+  source "${HOME}/.bash_completion.d/complete-alias/complete_alias"
+  complete -F _complete_alias d-bash d-sh d-run
 fi
 
 ## FZF settings
