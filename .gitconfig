@@ -78,6 +78,9 @@
 	# Show the default branch name
 	default-branch = config init.defaultBranch
 
+[init]
+	defaultBranch = main
+
 [user]
 	name =
 	email =
