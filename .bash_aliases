@@ -116,6 +116,7 @@ fi
 
 ## FZF settings
 ## ============
+
 # Use , as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER=','
 
@@ -135,7 +136,7 @@ if [[ -n "$(type -P fd)" ]]; then
 fi
 
 ## Environment Vars
-## ====
+## ================
 
 # Save the execution date and time along with the command in history
 HISTTIMEFORMAT="%F %T "
