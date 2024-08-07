@@ -105,7 +105,6 @@ alias m='make'
 [[ -n "$(type -P helm)" ]] && source <(helm completion bash)
 [[ "$(type -t __start_helm)" == "function" ]] && complete -F __start_helm h
 
-#shellcheck disable=SC1090
 [[ "$(type -t _docker)" == "function" ]] && complete -F _docker d
 
 # Use complete-alias from https://github.com/cykerway/complete-alias.git
@@ -134,3 +133,21 @@ if [[ -n "$(type -P fd)" ]]; then
     fd --type d --hidden --follow --exclude ".git" . "$1"
   }
 fi
+
+## Environment Vars
+## ====
+
+# Save the execution date and time along with the command in history
+HISTTIMEFORMAT="%F %T "
+
+# Ignore duplicate commands and commands which begin with a space from history
+HISTCONTROL=ignoreboth
+
+# Set number of entries to remember in the command history
+HISTSIZE=2000
+
+# Set the maximum number of entries contained in the history file
+HISTFILESIZE=2000
+
+# Don't save these colon-separated commands in history
+HISTIGNORE="clear:l:ls:ll:exit"
