@@ -49,7 +49,7 @@ disabled = false
 
 [shlvl]
 disabled = false
-threshold = 1
+threshold = 2
 
 [sudo]
 disabled = false
