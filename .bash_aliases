@@ -49,7 +49,9 @@ alias tmp="cd /tmp"
 [[ -z "$(type -P pbcopy)" ]] && alias pbcopy="xclip -selection clipboard"
 
 # Overrides
-[[ -n "$(type -P bat)" ]] && alias cat='bat -pp --theme="Monokai Extended Bright"'
+[[ -n "$(type -P bat)" ]] \
+  && alias cat='bat -pp --theme="Monokai Extended Bright"' \
+  && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 [[ -n "$(type -P bat)" ]] && alias less='bat -pp --paging=always'
 [[ -n "$(type -P delta)" ]] && alias diff='delta'
 [[ -n "$(type -P rg)" ]] && alias grep='rg --color always --hidden'
