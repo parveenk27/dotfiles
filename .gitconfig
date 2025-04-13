@@ -79,10 +79,49 @@
     # Show the default branch name
     default-branch = config init.defaultBranch
 
-    #
-    push-current-branch = push -u origin HEAD
+[branch]
+    sort = -committerdate
+
+[column]
+    ui = auto
+
+[commit]
+    verbose = true
+
+[core]
+    excludesfile = ~/.gitignore
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[help]
+    autocorrect = prompt
+
 [init]
     defaultBranch = main
+
+[merge]
+    conflictstyle = zdiff3
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[tag]
+    sort = version:refname
 
 [user]
     name =
